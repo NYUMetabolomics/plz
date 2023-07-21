@@ -1,0 +1,38 @@
+# -*- mode: python ; coding: utf-8 -*-
+
+import sys
+sys.setrecursionlimit(5000)
+
+block_cipher = None
+
+
+a = Analysis(['plz.py'],
+             pathex=['TSPECBASE'],
+             binaries=[],
+             datas=[('TSPECBASE/images/*.png','images'), ('TSPECBASE/images/*.ico','images'), ('TSPECBASE/images/*.gif','images'),('TSPECBASE/commands/*.py', 'commands'),('TSPECBASE/mspepsearch/*.dll','mspepsearch'),('TSPECBASE/mspepsearch/*.exe','mspepsearch'),('TSPECBASE/lib2nist/*','lib2nist')],
+             hiddenimports=[],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher,
+             noarchive=False)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          [],
+          name='plz',
+          debug=False,
+          bootloader_ignore_signals=False,
+          strip=False,
+          upx=True,
+          upx_exclude=[],
+          runtime_tmpdir=None,
+          console=False,
+          icon='TSPECBASE/images/program_icon.ico')
+

@@ -1,0 +1,95 @@
+grammar FORMULA
+
+formula <- term+
+term <-  element count %make_term
+element <- "Zr" %make_element
+			/ "Zn" %make_element
+			/ "Yb" %make_element
+			/ "Y" %make_element
+			/ "Xe" %make_element
+			/ "W" %make_element
+			/ "V" %make_element
+			/ "U" %make_element
+			/ "Tm" %make_element
+			/ "Tl" %make_element
+			/ "Ti" %make_element
+			/ "Th" %make_element
+			/ "Te" %make_element
+			/ "Tb" %make_element
+			/ "Ta" %make_element
+			/ "Sr" %make_element
+			/ "Sn" %make_element
+			/ "Sm" %make_element
+			/ "Si" %make_element
+			/ "Se" %make_element
+			/ "Sc" %make_element
+			/ "Sb" %make_element
+			/ "S" %make_element
+			/ "Ru" %make_element
+			/ "Rh" %make_element
+			/ "Re" %make_element
+			/ "Rb" %make_element
+			/ "Pt" %make_element
+			/ "Pr" %make_element
+			/ "Pd" %make_element
+			/ "Pb" %make_element
+			/ "P" %make_element
+			/ "Os" %make_element
+			/ "O" %make_element
+			/ "Ni" %make_element
+			/ "Ne" %make_element
+			/ "Nd" %make_element
+			/ "Nb" %make_element
+			/ "Na" %make_element
+			/ "N" %make_element
+			/ "Mo" %make_element
+			/ "Mn" %make_element
+			/ "Mg" %make_element
+			/ "Lu" %make_element
+			/ "Li" %make_element
+			/ "La" %make_element
+			/ "Kr" %make_element
+			/ "K" %make_element
+			/ "Ir" %make_element
+			/ "In" %make_element
+			/ "I" %make_element
+			/ "Ho" %make_element
+			/ "Hg" %make_element
+			/ "Hf" %make_element
+			/ "He" %make_element
+			/ "H" %make_element
+			/ "Ge" %make_element
+			/ "Gd" %make_element
+			/ "Ga" %make_element
+			/ "Fe" %make_element
+			/ "F" %make_element
+			/ "Eu" %make_element
+			/ "Er" %make_element
+			/ "Dy" %make_element
+			/ "D" %make_element
+			/ "Cu" %make_element
+			/ "Cs" %make_element
+			/ "Cr" %make_element
+			/ "Co" %make_element
+			/ "Cl" %make_element
+			/ "Ce" %make_element
+			/ "Cd" %make_element
+			/ "Ca" %make_element
+			/ "C" %make_element
+			/ "Br" %make_element
+			/ "Bi" %make_element
+			/ "Be" %make_element
+			/ "Ba" %make_element
+			/ "B" %make_element
+			/ "Au" %make_element
+			/ "As" %make_element
+			/ "Ar" %make_element
+			/ "Al" %make_element
+			/ "Ag" %make_element
+			/ "e" %make_element
+
+count <- n?
+n <- non_zero_digit (digit)*
+non_zero_digit <- [1-9]
+digit <- [0-9]
+
